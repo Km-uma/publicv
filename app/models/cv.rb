@@ -9,7 +9,7 @@ class Cv < ApplicationRecord
   has_many :experiences, dependent: :destroy
   has_many :languages, dependent: :destroy
   has_many :locations, through: :user
-  has_one  :current_location, through: :user
+  has_many  :current_location, through: :user
 
   validates :about, :authorization_statement, length: { maximum: ABOUT_MAX_LENGTH }
   validates :user, uniqueness: true
